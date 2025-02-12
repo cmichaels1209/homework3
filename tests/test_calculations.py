@@ -1,7 +1,7 @@
 """My Calculator Test"""
 
-from calculator.operations import add, multiply, subtract, divide
 import pytest   #import pytest for exception testing
+from calculator.operations import add, multiply, subtract, divide
 
 def test_addition():
     """Test addition function"""
