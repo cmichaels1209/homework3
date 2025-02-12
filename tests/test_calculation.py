@@ -1,3 +1,5 @@
+"""Test suite for calculation operations."""
+
 from decimal import Decimal
 import pytest
 from calculator.calculation import Calculation
