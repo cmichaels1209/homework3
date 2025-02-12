@@ -1,19 +1,25 @@
-"""
-Basic Calculator Fuctions - Addition, Subtraction, Multiplication, and Division
-"""
+from calculator.calculation import Calculation
+from calculator.operations import add, subtract, multiply, divide
 
-def add(a,b):
-    """Returns the sum of x and y."""
-    return a + b
+class Calculator:
+    @staticmethod
+    def add(a, b):
+        calculation = Calculation(a, b, add)  # Pass the add function 
+        return calculation.get_result()
 
-def subtract(a,b):
-    """Returns the difference of x and y."""
-    return a - b
+    @staticmethod
+    def subtract(a, b):
+        calculation = Calculation(a, b, subtract)  # Pass the subtract function
+        return calculation.get_result()
 
-def multiply(a,b):
-    """Returns the product of x and y."""
-    return a * b
+    @staticmethod
+    def multiply(a, b):
+        calculation = Calculation(a, b, multiply)  # Pass the multiply function
+        return calculation.get_result()
 
-def divide(a,b):
-    """Returns the quotient of x and y."""
-    return a / b
+    @staticmethod
+    def divide(a, b):
+        if b == 0:
+            raise ValueError("Cannot divide by zero!")
+        calculation = Calculation(a, b, divide)  # Pass the divide function
+        return calculation.get_result() 
