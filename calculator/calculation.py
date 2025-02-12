@@ -5,5 +5,5 @@ class Calculation:
         self.operation = operation  # Store the operation function
 
     def get_result(self):
-        # Call the stored operation with a and b
+        """Call the stored operation with a and b"""
         return self.operation(self.a, self.b)
