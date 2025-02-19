@@ -1,6 +1,10 @@
 """
 Basic Calculator Fuctions - Addition, Subtraction, Multiplication, and Division
 """
+
+# Remove unused imports
+# from calculator.operations import subtract, multiply  # DELETE if not used
+import pytest  # KEEP only if it's used in the file
 from decimal import Decimal
 
 def add(a: Decimal, b: Decimal) -> Decimal:

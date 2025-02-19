@@ -13,6 +13,7 @@ as well as the functionality of the Calculation class that encapsulates these op
 # Import the Calculation class from the calculator package to test its functionality.
 # Import the arithmetic operation functions (add, subtract, multiply, divide) to be tested.
 # pylint: disable=unnecessary-dunder-call, invalid-name
+
 from decimal import Decimal
 import pytest
 from calculator.calculation import Calculation
@@ -21,6 +22,13 @@ from calculator.operations import add, subtract, multiply, divide
 # pytest.mark.parametrize decorator is used to parameterize a test function, enabling it to be called
 # with different sets of arguments. Here, it's used to test various scenarios of arithmetic operations
 # with both integer and decimal operands to ensure the operations work correctly under different conditions.
+
+def test_operations():
+    """Test multiple operations in one function."""
+    assert add(Decimal('10'), Decimal('5')) == Decimal('15')
+    assert subtract(Decimal('10'), Decimal('5')) == Decimal('5')  # Now used
+    assert multiply(Decimal('10'), Decimal('5')) == Decimal('50')  # Now used
+    assert divide(Decimal('10'), Decimal('5')) == Decimal('2')
 
 def test_calculation_operations(a, b, operation, expected):
     """

@@ -1,6 +1,7 @@
 # conftest.py
-import pytest
 from decimal import Decimal
+#import random
+#import pytest
 from faker import Faker
 from calculator.operations import add, subtract, multiply, divide
 
@@ -22,11 +23,11 @@ def generate_test_data(num_records):
         operation_func = operation_mappings[operation_name]
 
         # Ensure b is not zero for divide operation to prevent division by zero in expected calculation
-        if operation_func == divide:
+        if operation_func is divide:
             b = Decimal('1') if b == Decimal('0') else b
 
         try:
-            if operation_func == divide and b == Decimal('0'):
+            if operation_func is divide and b == Decimal('0'):
                 expected = "ZeroDivisionError"
             else:
                 expected = operation_func(a, b)
